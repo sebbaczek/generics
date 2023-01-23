@@ -100,6 +100,7 @@ public class Main {
                         @Override
                         public int compare(Car o1, Car o2) {
                                 //trzeba dodać jeszcze zachowanie na wypadek nulla
+                                //compareTo - metoda z Comperable
                                 int result = o1.getName().compareTo(o2.getName());
                                 //jeśli Name są równe to zrób porównanie Age, jeśli Name są różne to nie rób już porównania Age
                                 if (result != 0){
@@ -130,6 +131,7 @@ lambdacomp6rev = lambdacomp6rev.thenComparingInt(car -> car.getAge())  ;
 
 //skrócenie zapisu ctrl alt N
 Comparator<Car>lambdacomp6rev2;
+//musi być podany typ Comparator.<Car, String>
 lambdacomp6rev2 = Comparator.<Car, String>comparing(car1 -> car1.getName()).thenComparingInt(car -> car.getAge())  ;
         
                 
